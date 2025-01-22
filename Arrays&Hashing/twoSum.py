@@ -34,9 +34,9 @@ class Solution:
 
       prevMap = {}  # {Value : index}
       for i in range(len(nums)):
-        diff = target - nums[i]
-        if diff in prevMap:
-          return [prevMap[diff], i]
+        diff = target - nums[i]        # Find difference between target and array elements
+        if diff in prevMap:            # Checks if the diff(key) is present in prevMap
+          return [prevMap[diff], i]    # If difference is present, return the indices
         else:
-          prevMap[diff] = i;
+          prevMap[nums[i]] = i;        # Store array element as key and indice as value
       return
