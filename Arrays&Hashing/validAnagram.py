@@ -20,16 +20,17 @@
 
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-      if len(s) != len(t):
+      if len(s) != len(t):            # Check if the length of two strings is equal
         return False
         
       countS, countT = {}, {}
       
       for i in range(len(s)):
+        # .get returns the value present in dict or returns 0 if no value is present
         countS[i] = 1 + countS.get(s[i], 0)
         countT[i] = 1 + countT.get(t[i], 0)
 
-      for j in countS:
+      for j in countS:            # c is the key
         if countS[j] != countT.get(j, 0):
           return False
           
